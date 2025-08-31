@@ -10,7 +10,7 @@ class AtletaModel(BaseModel):
 
     pk_id: Mapped[int] = mapped_column(Integer, primary_key=True)
     nome: Mapped[str] = mapped_column(String(50), primary_key=False)
-    cpf: Mapped[str] = mapped_column(String(11), primary_key=False)
+    cpf: Mapped[str] = mapped_column(String(11), unique=True, primary_key=False)
     idade: Mapped[int] = mapped_column(Integer, primary_key=False)
     peso: Mapped[float] = mapped_column(Float, primary_key=False)
     altura: Mapped[float] = mapped_column(Float, primary_key=False)
